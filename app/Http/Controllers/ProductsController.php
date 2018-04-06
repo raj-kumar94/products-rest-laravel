@@ -99,7 +99,14 @@ class ProductsController extends Controller
     
     // List all products
     public function listAll(Request $request){
-        return Product::paginate(10);
+        $products =  Product::paginate(10);
+        foreach($products as $product){
+            $product->image_src = asset(Storage::url($product->image_src));
+            foreach($product->images as $p_img){
+                $p_img->img_src = asset(Storage::url($p_img->img_src));
+            }
+        }
+        return $products;
     }
 
     // view a single product
