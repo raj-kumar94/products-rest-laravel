@@ -2,6 +2,7 @@
 ```
 composer install
 php artisan migrate
+php artisan storage:link
 ```
 
 For the simplicity of creating a user, I'm using laravel's default Auth module.
