@@ -48,10 +48,19 @@ pass these in headers:
 # API Endpoints (Protected routes)
 ```
 POST http://localhost:8000/api/add  ## create a new product
+parameters: image, name, price, qty, description
+
 PUT http://localhost:8000/api/update/{id}  ## update existing product
+parameters: image, name, price, qty, description
+
 DELETE http://localhost:8000/api/delete/{id}  ## delete the product
+no parameter required
+
 GET http://localhost:8000/api/view/{id}  ## view details of a product
+no parameter required
+
 GET http://localhost:8000/api/all  ## view all product
+no parameter required
 ```
 
 # API Endpoints (unprotected routes)
@@ -59,17 +68,18 @@ GET http://localhost:8000/api/all  ## view all product
 
 ```
 POST http://localhost:8000/api/image/add  ## add a new Image for a product
-{
- "product_id": 12
-}
+parameters: 'product_id', 'image' as form data. 
 
 
 PUT http://localhost:8000/api/image/update/{id}  ## update existing Image
+no parameter required
+
 DELETE http://localhost:8000/api/image/delete/{id}  ## delete the Image
+no parameter required
 ```
 
 
-> Images added with above API will be included in products API and all images will return with below endpoints:
+> Images added with above API will be included in products API and all images will be returned with below endpoints:
 ```
 GET http://localhost:8000/api/view/{id}  ## view details of a product
 GET http://localhost:8000/api/all  ## view all product
