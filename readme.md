@@ -46,6 +46,7 @@ pass these in headers:
 
 
 # API Endpoints (Protected routes)
+### content type: application/json
 ```
 POST http://localhost:8000/api/add  ## create a new product
 parameters: image, name, price, qty, description
