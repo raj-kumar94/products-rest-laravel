@@ -58,7 +58,12 @@ GET http://localhost:8000/api/all  ## view all product
 ### To make this easier to upload images quicky, these APIs don't require access token
 
 ```
-POST http://localhost:8000//api/image/add  ## create a new Image
+POST http://localhost:8000/api/image/add  ## add a new Image for a product
+{
+ "product_id": 12
+}
+
+
 PUT http://localhost:8000/api/image/update/{id}  ## update existing Image
 DELETE http://localhost:8000/api/image/delete/{id}  ## delete the Image
 ```
